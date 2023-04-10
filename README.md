@@ -1,6 +1,6 @@
 # CSCI-50-Final
 
--Developers-
+Developers\n
     Emma Ford
     Nicole Niesen
     Evan White
