@@ -37,5 +37,6 @@ while [ $status = "y" ]; do
                 fi
         done
 done
-echo "Returning..."
+
+echo "Exiting..."
                      
