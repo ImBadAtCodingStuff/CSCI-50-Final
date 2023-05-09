@@ -11,12 +11,18 @@ def get_version():
                 return versionnum
 
 # needs work !!!    
-def set_new_main_password(newPassword):
-    with open("config.data") as config_file:
-        config_file.write("version: "+get_version+"\nmain_password: "+input("Enter a new main password: "))
+def set_new_main_password():
+    with open("config.data", "w") as config_file:
+        config_file.write("version: "+"0.1"+"\nmain_password: "+input("Enter a new main password: "))
 
 def first_run():
-    firstrun = True
+    # check if config file exists
+    if (os.path.exists("config.data")):
+        print("Path exists")
+        firstrun = False
+    else:
+        print("No config file found...")
+        firstrun = True
     return firstrun
 
 def read_password_line():
@@ -35,17 +41,14 @@ def guess_password():
             return True
         else:
             print("Wrong password!\n")
+            guesscount+=1
+        print("You have guessed "+str(guesscount)+" times...")
     return False
-        
-# check if config file exists
-if (os.path.exists("config.data")):
-    print("Path exists")
-else:
-    print("No config file found...")
 
-if (first_run):
+
+if (first_run()):
     # ask to set a main password
-    set_new_main_password("newpasswordforme")
+    set_new_main_password()
 else:
     # ask the user for there password
     if (guess_password()):
