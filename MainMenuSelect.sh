@@ -12,7 +12,7 @@ while true; do
       ./SearchRecords.sh
     elif [ $Reply == "Edit_Record" ]; then
       python3 editRecord.py
-    elif [ $Reply == "Delete_Record"]; then
+    elif [ $Reply == "Delete_Record" ]; then
       chmod u+rx DeleteRecord.sh
       ./DeleteRecord.sh
     elif [ $Reply == "Password_Generator" ]; then
