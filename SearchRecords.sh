@@ -1,6 +1,6 @@
 #!/bin/bash
+#Main developer: Emma Ford
 
-#MAIN SUBPROGRAM START
 status="y"
 clear
 while [ $status = "y" ]; do
@@ -37,6 +37,4 @@ while [ $status = "y" ]; do
                 fi
         done
 done
-
-echo "Exiting..."
                      
