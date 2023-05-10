@@ -12,12 +12,13 @@ while [ $status = "y" ]; do
         if [ $count -eq 0 ]; then
                 echo
                 echo "No match found."
-                sleep 3
+                sleep 2
         else
                 echo
                 echo "Matching record found:"
+                echo "Service|Username|Password"
                 sqlite3 PasswordSquirrel.db "SELECT * FROM Password_Data WHERE Service='$searchterm' COLLATE NOCASE"
-               sleep 3
+               sleep 2
         fi
         echo
         echo "Enter Y to search for another record."
