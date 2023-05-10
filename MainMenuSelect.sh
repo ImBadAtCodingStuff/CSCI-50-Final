@@ -1,4 +1,6 @@
 #!/bin/bash
+#Main developer: Emma Ford
+
 while true; do
   echo "Password Squirrel Main Menu"
   echo
