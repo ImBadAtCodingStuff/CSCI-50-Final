@@ -16,7 +16,7 @@ while true; do
       chmod u+rx DeleteRecord.sh
       ./DeleteRecord.sh
     elif [ $Reply == "Password_Generator" ]; then
-      python3 generator.py
+      ./generator.py
     elif [ $Reply == "Exit" ]; then
       chmod u+rx exit.pl
       ./exit.pl
