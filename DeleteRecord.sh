@@ -34,10 +34,11 @@ while [ $status = "y" ]; do
         if [ $count -eq 0 ]; then
           echo
           echo "No matching records found."
-          sleep 3
+          sleep 2
         else
           echo
           echo "Matching record found:"
+          echo "Service|Username|Password"
           sqlite3 PasswordSquirrel.db "SELECT * FROM Password_Data WHERE Service='$delrec' COLLATE NOCASE"
           echo
           DeleteConfirm "$delrec"    
