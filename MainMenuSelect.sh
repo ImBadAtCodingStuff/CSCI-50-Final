@@ -24,6 +24,7 @@ while true; do
       break
     elif [ $Reply == "Exit" ]; then
       ./exit.pl
+      exit
     else 
       echo "Invalid input."
     fi
