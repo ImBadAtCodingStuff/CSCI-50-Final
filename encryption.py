@@ -1,3 +1,7 @@
+# main developer of this script: Evan White
+
+# This script encrypts and decryptes passwords for the user
+
 from time import sleep
 import os
 

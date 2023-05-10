@@ -1,3 +1,5 @@
+# main developer of this script: Evan White
+
 # This is a script to generate a password for the user to use for one of there accounts
 import random
 import sqlite3

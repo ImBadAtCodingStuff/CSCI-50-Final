@@ -1,3 +1,7 @@
+# main developer of this script: Evan White
+
+# this script manages the first run condition of the program
+
 # handle configuration file
 import os
 import sqlite3
