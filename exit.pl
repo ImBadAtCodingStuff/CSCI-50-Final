@@ -10,3 +10,6 @@ $no = "n";
 if ($ch eq $yes) {
 	exit;
 }
+else {
+	system("sh", "MainMenuSelect.sh")
+}

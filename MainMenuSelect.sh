@@ -16,10 +16,11 @@ while true; do
       chmod u+rx DeleteRecord.sh
       ./DeleteRecord.sh
     elif [ $Reply == "Password_Generator" ]; then
-      ./generator.py
+      python3 generator.py
     elif [ $Reply == "Exit" ]; then
       chmod u+rx exit.pl
       ./exit.pl
+      exit
     else 
       echo "Invalid input."
     fi
