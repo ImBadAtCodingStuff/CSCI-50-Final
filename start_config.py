@@ -1,6 +1,7 @@
 # handle configuration file
 import os
 import sqlite3
+import subprocess
 
 # setup for connecting to the databse
 databseconnection=sqlite3.connect("PasswordSquirrel.db")
@@ -68,5 +69,5 @@ else:
         print("Please restart the application and try again...")
         exit()
 
-os.system("MainMenuSelect.sh")
+subprocess.call(['./MainMenuSelect.sh'])
             
