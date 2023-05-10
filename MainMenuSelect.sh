@@ -11,21 +11,18 @@ while true; do
       python3 addRecord.py
       break
     elif [ $Reply == "Search_Records" ]; then
-      chmod u+rx SearchRecords.sh
       ./SearchRecords.sh
       break
     elif [ $Reply == "Edit_Record" ]; then
       python3 editRecord.py
       break
     elif [ $Reply == "Delete_Record" ]; then
-      chmod u+rx DeleteRecord.sh
       ./DeleteRecord.sh
       break
     elif [ $Reply == "Password_Generator" ]; then
       python3 generator.py
       break
     elif [ $Reply == "Exit" ]; then
-      chmod u+rx exit.pl
       ./exit.pl
     else 
       echo "Invalid input."
