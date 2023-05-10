@@ -3,7 +3,7 @@ import random
 import sqlite3
 
 # setup for connecting to the databse
-databseconnection=sqlite3.connect("database.db")
+databseconnection=sqlite3.connect("PasswordSquirrel.db")
 cursor=databseconnection.cursor()
 
 # chars

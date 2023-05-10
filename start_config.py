@@ -1,5 +1,10 @@
 # handle configuration file
 import os
+import sqlite3
+
+# setup for connecting to the databse
+databseconnection=sqlite3.connect("PasswordSquirrel.db")
+cursor=databseconnection.cursor()
 
 # needs work !!!
 def get_version():
@@ -32,6 +37,11 @@ def read_password_line():
                 password = line
     return password
 
+def create_table():
+    cursor.execute("""CREATE TABLE Password_Data (Service varchar(30) PRIMARY KEY, Username varchar(30), Password varchar(30))""")
+    databseconnection.commit()
+
+
 def guess_password():
     password = read_password_line()
     guesscount = 0
@@ -49,6 +59,7 @@ def guess_password():
 if (first_run()):
     # ask to set a main password
     set_new_main_password()
+    create_table()
 else:
     # ask the user for there password
     if (guess_password()):
