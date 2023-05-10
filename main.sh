@@ -1,4 +1,5 @@
 #!/bin/bash
+#Primary Author: 	Nicole Niesen
 
 chmod +x DeleteRecord.sh
 chmod +x MainMenuSelect.sh
