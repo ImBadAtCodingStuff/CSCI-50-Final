@@ -19,9 +19,9 @@ chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "
 # display the password
 
 def save_to_database(username, password):
-    cursor.execute(f"""INSERT INTO accounts VALUES ({username}, {password})""")
+    cursor.execute(f"""INSERT INTO accounts VALUES ('{username}', '{password}')""")
     databseconnection.commit()
-    if (cursor.execute(f"""SELECT * FROM account WHERE username={username}""") is not None):
+    if (cursor.execute(f"""SELECT * FROM account WHERE username='{username}'""") is not None):
         print("Account data saved sucessfully...")
 
 
