@@ -57,4 +57,5 @@ else:
         print("Please restart the application and try again...")
         exit()
 
+os.system("MainMenuSelect.sh")
             
