@@ -8,15 +8,18 @@ while true; do
     if [ $Reply == "Add_Record" ]; then
       python3 addRecord.py
     elif [ $Reply == "Search_Records" ]; then
-      bash SearchRecords.sh
+      chmod u+rx SearchRecords.sh
+      ./SearchRecords.sh
     elif [ $Reply == "Edit_Record" ]; then
       python3 editRecord.py
     elif [ $Reply == "Delete_Record"]; then
-      bash DeleteRecord.sh
+      chmod u+rx DeleteRecord.sh
+      ./DeleteRecord.sh
     elif [ $Reply == "Password_Generator" ]; then
       python3 generator.py
     elif [ $Reply == "Exit" ]; then
-      PERL exit.pl
+      chmod u+rx exit.pl
+      ./exit.pl
     else 
       echo "Invalid input."
     fi
