@@ -1,5 +1,5 @@
 #!/bin/bash
-#Main author: Emma Ford
+#Main developer: Emma Ford
 
 DeleteConfirm () {
   delvar="$1"
