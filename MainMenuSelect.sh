@@ -6,18 +6,17 @@ while true; do
   select Reply in Add_Record Search_Records Edit_Record Delete_Record Password_Generator Exit
   do
     if [ $Reply == "Add_Record" ]; then
-      AddRecords #Addrecord subprogram here
+      python3 addRecord.py
     elif [ $Reply == "Search_Records" ]; then
-      SearchRecords #searchrecord subprogram here
+      bash SearchRecords.sh
     elif [ $Reply == "Edit_Record" ]; then
-      EditRecord #editrecord subprogram here
+      python3 editRecord.py
     elif [ $Reply == "Delete_Record"]; then
-      DeleteRecord #deleterecord subprogram here
+      bash DeleteRecord.sh
     elif [ $Reply == "Password_Generator" ]; then
-      PasswordGenerator #PassGenerator subprogram here
+      python3 generator.py
     elif [ $Reply == "Exit" ]; then
-      Exit #exit subprogram here
-      exit #remove after adding subprogram in
+      PERL exit.pl
     else 
       echo "Invalid input."
     fi
