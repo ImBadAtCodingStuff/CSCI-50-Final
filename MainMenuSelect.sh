@@ -27,8 +27,6 @@ while true; do
     elif [ $Reply == "Exit" ]; then
       chmod u+rx exit.pl
       ./exit.pl
-      break
-      exit
     else 
       echo "Invalid input."
     fi
