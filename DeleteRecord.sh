@@ -24,7 +24,6 @@ DeleteConfirm () {
 }
 
 
-clear
 status="y"
 while [ $status = "y" ]; do
         echo "Password Squirrel"
