@@ -2,7 +2,6 @@
 #Main developer: Emma Ford
 
 status="y"
-clear
 while [ $status = "y" ]; do
         echo "Password Squirrel"
         echo "Search Records"
