@@ -5,19 +5,19 @@ status="y"
 while [ $status = "y" ]; do
         echo "Password Squirrel"
         echo "Search Records"
-        read -p "Enter name of service to search for: " searchterm
-        count=$(sqlite3 PasswordSquirrel.db "SELECT COUNT(*) FROM Password_Data WHERE Service='$searchterm' COLLATE NOCASE") #Strict case insensitive match option
-        #Option for similar matching "SELECT COUNT(*) FROM Password_Data WHERE Service LIKE '%$searchterm%' COLLATE NOCASE"
+        read -p "Enter service/username to search for: " searchterm
+        count=$(sqlite3 PasswordSquirrel.db "SELECT COUNT(*) FROM Password_Data WHERE Service LIKE '%$searchterm%' COLLATE NOCASE OR Username LIKE '%$searchterm%' COLLATE NOCASE")
         if [ $count -eq 0 ]; then
                 echo
                 echo "No match found."
                 sleep 2
         else
                 echo
-                echo "Matching record found:"
-                echo "Service|Username|Password"
-                sqlite3 PasswordSquirrel.db "SELECT * FROM Password_Data WHERE Service='$searchterm' COLLATE NOCASE"
-               sleep 2
+                echo "Matching record(s) found:"
+                echo
+                result=$(sqlite3 PasswordSquirrel.db "SELECT rowid, * FROM Password_Data WHERE Service LIKE '%$searchterm%' COLLATE NOCASE OR Username LIKE '%$searchterm%' COLLATE NOCASE ")
+                echo "$result" | awk -F'|' '{printf "Record ID: %s\nService: %s\nUsername: %s\nPassword: %s\n\n", $1, $2, $3, $4}'
+                sleep 2
         fi
         echo
         echo "Enter Y to search for another record."
@@ -37,4 +37,3 @@ while [ $status = "y" ]; do
                 fi
         done
 done
-                     
